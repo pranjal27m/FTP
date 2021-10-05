@@ -1,0 +1,88 @@
+<template name="listingtaxi">
+    
+      <div class="third">
+        {{#each sortedtaxi}}
+        <div class="searchlocation" style="margin-top: 90px;margin-left: 7px;">
+          <span style="font-size: 19px;">
+           Searches for Location :
+              <i class="fa fa-map-marker i1" style="font-size: 16px;color: black;margin-right: 5px;margin-left: 10px;"></i>
+              {{Location}}
+        </span>
+        </div>
+        {{/each}}
+
+      {{#each listingtaxi}}
+      <div class="second">
+        <h2 class="head">{{username}}</h2>
+        <div class="row r1">
+          <div class="col-lg-3 col-sm-2">
+            <div class="container">
+                <img class="imagcar" src="images/taxi.png " width="170" height="110">
+            </div>
+          </div>
+
+          <div class="col-lg-9 col-sm-10 info">
+           <div class="row r2">
+              <div class="col-lg-4 col-sm-4">
+                <div class="container">
+                   <b>Location:</b>
+                     <p> {{Location}}</p>
+                </div>
+              </div>
+
+              <div class="col-lg-4 col-sm-4">
+                <div class="container">
+                   <b>Taxi Modal:</b>
+                  <p> {{taximodal}}</p>
+                </div>
+              </div>
+
+              <div class="col-lg-4 col-sm-4">
+                 <div class="container">
+                   <b>Ratings:</b>
+                      <div class="container">
+                          <div class="row">
+                              <i class="fa fa-star i1" style="margin-top: 3px; margin-right: 2px;"></i>
+                             {{rating}}
+                          </div>
+                      </div>
+                  </div>
+              </div>
+           </div>
+           <div class="row">
+               <div class="col-lg-4 col-sm-4">
+                   <div class="container">
+                     <b>Mobile Number:</b>
+                    <p> {{Mobile_Number}}</p>
+                   </div>
+                </div>
+
+                <div class="col-lg-4 col-sm-4">
+                    <div class="container">
+                      <b>Taxi Number:</b>
+                    <p>{{taxinumber}}</p>
+                    </div>
+                </div>
+
+                <div class="col-lg-4 col-sm-4">
+                    <div class="container">
+                      <b>Charges:</b>
+                    <p> Rs.{{charges}}</p>
+                   </div>
+                </div>
+            </div>
+          </div>
+        </div>
+        <div class="star">
+          {{> starsRating id=_id class='mystar' size=20 mutable=true}}
+          </div>
+      </div>
+      {{/each}}
+      
+      </div>
+      
+     <!--driverlist-->
+       
+</template>
+
+ 

@@ -1,0 +1,93 @@
+<template name="listing">
+
+    <div class="first">
+     
+        
+        <button id="driver" class="drivernav btn-1 active1">Drivers</button>
+        <button id="taxi" class="taxinav btn-1">Taxis</button>
+        
+        <div class="container coll2"> *Extra charges for overnight stay or as per driver can be applied. </div>
+        <hr class="listingline" >
+        <div class="container col1">
+          <div class="searchbox">
+             <input class="searchloc" id="searchloc" type="text" name="search" placeholder="Location"><br>
+             <button class="btn  demo btn2 " style="font-size: 10px;background-color: gold;border-radius: 2px;"> <b>  Search</b> </button>
+           </div>
+        </div>              
+    </div>
+      {{#if  showtaxi}}
+      {{> listingtaxi}}
+      {{/if}}
+      {{#if  showdriver}}
+      {{> listingdriver}}
+      {{/if}}
+      
+</template>
+
+<template name="listingdriver">
+  <div class="third">
+    {{#each sorteddriver}}
+    <div class="searchlocation" style="margin-top: 90px;margin-left: 7px;">
+      <span style="font-size: 19px;">
+       Searches for Location :
+          <i class="fa fa-map-marker i1" style="font-size: 16px;color: black;margin-right: 5px;margin-left: 10px;"></i>
+          {{Location}}
+    </span>
+    </div>
+    {{/each}}
+    {{#each listingdriver}}
+  <div class="second">
+    <h2 class="head">{{username}}</h2>
+    <div class="row r1">
+      <div class="col-lg-4 col-sm-3">
+        <div class="container">
+            <img class="imagcar" src="images/user.png " width="170" height="110">
+        </div>
+      </div>
+
+      <div class="col-lg-8 col-sm-9 ">
+       <div class="row r2">
+          <div class="col-lg-6 col-sm-6">
+            <div class="container">
+               <b>Location:</b>
+              <p> {{Location}}</p>
+            </div>
+          </div>
+
+          <div class="col-lg-6 col-sm-6">
+             <div class="container">
+               <b>Ratings:</b>
+                  <div class="container">
+                      <div class="row">
+                          <i class="fa fa-star i1" style="margin-top: 3px;margin-right: 2px;"></i>
+                        <p>{{rating}}</p>
+                      </div>
+                  </div>
+              </div>
+          </div>
+       </div>
+       <div class="row">
+           <div class="col-lg-6 col-sm-6">
+               <div class="container">
+                 <b>Mobile Number:</b>
+                <p>{{Mobile_Number}}</p>
+               </div>
+            </div>
+            
+            <div class="col-lg-4 col-sm-4">
+                <div class="container">
+                  <b>Charges:</b>
+                <p>Rs. {{charges}}</p>
+               </div>
+            </div>
+        </div>
+      </div>
+    </div>
+    <div class="star">
+    {{> starsRating id=_id class='mystar' size=20 mutable=true}}
+    </div>
+  </div>
+  {{/each}}
+</div>
+
+</template>

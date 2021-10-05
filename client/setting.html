@@ -1,0 +1,261 @@
+<template name="settings">
+    <nav class="navbar navbar-expand-lg fixed-top navbar-light bg-warning">
+        <b> <div class="navbbar headingsetting" >Settings</div></b>
+      </nav>
+<div class="first">
+    <p class="headofpage text-center" >FPT</p>            
+    <button id="editinfo" class="btn-setting">Edit Info</button>
+    {{#if DriverTrue}}
+    <button id="driveravailability" class="btn-setting">Driver Availability</button>
+    {{else }}
+    <button id="adddrivers" class="btn-setting">Add Driver</button>
+    {{/if}}
+    {{#if TaxiTrue}}
+    <button id="taxiavailability" class="btn-setting">Taxi Availability</button>
+    {{else}}
+    <button id="addtaxis" class="btn-setting"> Add Taxi</button>
+    {{/if}}
+    <button id="changepassword" class="btn-setting">Change Password</button>
+    <a href="/" style="color: black;"> <button id="Logout" class="btn-setting logout">Logout</button></a>
+</div>
+<div class="bigcontainer">
+    <div class="random">
+      {{#if drivertrue}}
+      {{#each datacon}}
+      {{> settingdriveredit}}
+      {{/each}}
+      {{/if}}
+
+      {{#if taxitrue}}
+      {{#each dataset}}
+      {{> settingtaxiedit}}
+      {{/each}}
+      {{/if}}
+
+      {{#if adddriver}}
+      {{> settingadddriver}}
+      {{/if}}
+
+      {{#if addtaxi}}
+      {{> settingaddtaxi}}
+      {{/if}}
+
+      {{#if changepass}}
+      {{> ChangePassword}}
+      {{/if}}
+    </div>
+</div>
+</template>
+<template name="ChangePassword">
+  <div class="changepass">
+     <div class="changepass1">
+      <div class="navv" style="background-color: gold; height: 50px;">
+      <p class="text-center" style="color: black;padding: 15px;font-size: 14px;font-weight: bold;">Change Password</p>
+      </div>
+       <label class="oldone" style="font-size: 15px;font-weight: 600;margin-left: 40px;margin-top: 70px;">Enter Old Password:</label>
+       <input type='password' id="oldpass" style="width: 250px;margin-left: 17px;height: 30px;font-size: 15px;">
+       {{#if oldpass}}
+       {{> NewPassword}}
+       {{/if}}
+       {{#if clickbut}}
+       <button class="check " id="check" style="height: 35px;width: 100px;margin-top: 50px;margin-left: 200px;
+       font-size: 14px;font-weight: 600;background-color: gold;border: 0px ;border-radius: 3px;margin-bottom: 50px;">
+        Check</button>
+        {{/if}}
+     </div>
+</div>
+</template>
+<template name="NewPassword">
+  <div class="newpass">
+    <label class="oldone" style="font-size: 15px;font-weight: 600;margin-left: 40px;margin-top: 40px;">Enter New Password:</label>
+    <input type='password' id="newpass" style="width: 250px;margin-left: 10px;height: 30px;font-size: 15px;">
+    <label class="oldone" style="font-size: 15px;font-weight: 600;margin-left: 40px;margin-top: 40px;">Confirm Password:</label>
+    <input type='password' id="confpass" style="width: 250px;margin-left: 24px;height: 30px;font-size: 15px;">
+    <button class="check " id="submit" style="height: 35px;width: 100px;margin-top: 50px;margin-left: 200px;
+    font-size: 14px;font-weight: 600;background-color: gold;border: 0px ;border-radius: 3px;margin-bottom: 50px;">
+     Submit</button>
+  </div>
+</template>
+
+<template name="settingdriveredit">
+  <div class="signup-form" style="padding-bottom: 0px;">
+      <form  name="driverform" class="editdriver">
+          <div class="row">
+            <div class="col-8 offset-4">
+          <h2 class="text-center">Sign Up As driver</h2>
+        </div>	
+          </div>			
+          <div class="form-group row">
+        <label for="username" class="col-form-label col-4">Username</label>
+        <div class="col-8">
+                  <input type="text" class="form-control" name="username" value={{username}} id="uname" >
+              </div>        	
+          </div>
+      <div class="form-group row">
+        <label for="mobileno" class="col-form-label col-4">Mobile Number</label>
+        <div class="col-8">
+                  <input type="number" class="form-control" name="Mobile_Number" value={{Mobile_Number}} id="MobNumber"  >
+              </div>        	
+          </div>
+    <div class="form-group row">
+        <label for="location" class="col-form-label col-4">Location</label>
+          <div class="col-8">
+              <input type="text" class="form-control" name="Location" value={{Location}} id="Loc"  >
+          </div>        	
+      </div>
+      <div class="form-group row">
+        <label for="drivinglicensenumber" class="col-form-label col-4">Driving License Number</label>
+          <div class="col-8">
+              <input type="number" class="form-control" name="drivinglicensenumber" value={{drivinglicensenumber}} id="drivinglnumber"  >
+          </div>        
+    </div>
+       <div class="form-group row">
+            <label for="charges" class="col-form-label col-4">Charges</label>
+            <div class="col-4">
+              <input type="number" class="form-control" name="charges" id="chargee" value={{charges}} >
+            </div>
+            <label class="col-form-label col-2">/km</label>       	
+      </div>
+       <div class="form-group row">
+        <div class="col-8 offset-4">
+          <button  type="submit" class="btn btn-primary btn-lg ">Submit</button>
+        </div>  
+     </div>		      
+      </form>
+      </div>
+</template>
+
+<template name="settingtaxiedit">
+  <div class="signup-form" >
+      <form name="taxiform" class="edittaxi" style="padding-top: 10px;">
+          <div class="row" style="margin-top:0px;">
+            <div class="col-8 offset-4">
+          <h2 class="text-center">Sign Up As Taxi Owner</h2>
+        </div>	
+          </div>			
+          <div class="form-group row">
+        <label for="username" class="col-form-label col-4">Username</label>
+        <div class="col-8">
+                  <input type="text" class="form-control" name="username" value={{username}} id="uname1" >
+              </div>        	
+          </div>
+       
+      <div class="form-group row">
+        <label for="mobileno" class="col-form-label col-4">Mobile Number</label>
+        <div class="col-8">
+                  <input type="number" class="form-control" name="Mobile Number" value={{Mobile_Number}} id="MobNumber1">
+              </div>        	
+          </div>
+       <div class="form-group row">
+            <label for="location" class="col-form-label col-4">Location</label>
+            <div class="col-8">
+                      <input type="text" class="form-control" name="Location" value={{Location}} id="Loc1" >
+                  </div>        	
+              </div>
+       <div class="form-group row">
+           <label for="taxinumber" class="col-form-label col-4">Taxi Number</label>
+              <div class="col-8">
+                 <input type="text" class="form-control" name="taxinumber" value={{taxinumber}} id="tnumber">
+              </div>        
+       </div>
+       <div class="form-group row">
+        <label for="taximodal" class="col-form-label col-4">Taxi Model</label>
+        <div class="col-8">
+                  <input type="text" class="form-control" name="taximodel" value={{taximodal}} id="tmodal">
+              </div>        	
+          </div>
+     <div class="form-group row">
+         <label class="col-form-label col-4">Charges</label>
+          <div class="col-4">
+            <input type="number" class="form-control" name="charges" value={{charges}} id="chargee1">
+          </div>
+          <label class="col-form-label col-2">/km</label>       	
+       </div>
+      <div class="form-group row">
+        <div class="col-8 offset-4">
+          <button type="submit" class="btn btn-primary btn-lg ">Submit</button>
+        </div>  
+      </div>		      
+      </form>
+      </div>
+</template>
+
+<template name="settingadddriver">
+  <div class="signup-form">
+    <form  name="driverform" class="adddriver">
+        <div class="row">
+          <div class="col-8 offset-4">
+        <h2 class="text-center">Sign Up As driver</h2>
+      </div>	
+        </div>			
+       
+  <div class="form-group row">
+      <label for="location" class="col-form-label col-4">Location</label>
+        <div class="col-8">
+            <input type="text" class="form-control" name="Location" value={{Location}} id="LocA"  >
+        </div>        	
+    </div>
+    <div class="form-group row">
+      <label for="drivinglicensenumber" class="col-form-label col-4">Driving License Number</label>
+        <div class="col-8">
+            <input type="number" class="form-control" name="drivinglicensenumber" value={{drivinglicensenumber}} id="drivinglnumberA"  >
+        </div>        
+  </div>
+     <div class="form-group row">
+          <label for="charges" class="col-form-label col-4">Charges</label>
+          <div class="col-4">
+            <input type="number" class="form-control" name="charges" id="chargeeA" value={{charges}} >
+          </div>
+          <label class="col-form-label col-2">/km</label>       	
+    </div>
+     <div class="form-group row">
+      <div class="col-8 offset-4">
+        <button  type="submit" class="btn btn-primary btn-lg ">Submit</button>
+      </div>  
+   </div>		      
+    </form>
+    </div>
+</template>
+
+<template name="settingaddtaxi">
+  <div class="signup-form">
+    <form name="taxiform" class="addtaxi" >
+        <div class="row">
+          <div class="col-8 offset-4">
+        <h2 class="text-center">Sign Up As Taxi Owner</h2>
+      </div>	
+        </div>			
+        
+     <div class="form-group row">
+          <label for="location" class="col-form-label col-4">Location</label>
+          <div class="col-8">
+                    <input type="text" class="form-control" name="Location" value={{Location}} id="Loc1A" >
+                </div>        	
+            </div>
+     <div class="form-group row">
+         <label for="taxinumber" class="col-form-label col-4">Taxi Number</label>
+            <div class="col-8">
+               <input type="text" class="form-control" name="taxinumber" value={{taxinumber}} id="tnumberA">
+            </div>        
+     </div>
+     <div class="form-group row">
+      <label for="taximodal" class="col-form-label col-4">Taxi Model</label>
+      <div class="col-8">
+                <input type="text" class="form-control" name="taximodel" value={{taximodal}} id="tmodalA">
+            </div>        	
+        </div>
+   <div class="form-group row">
+       <label class="col-form-label col-4">Charges</label>
+        <div class="col-4">
+          <input type="number" class="form-control" name="charges" value={{charges}} id="chargee1A">
+        </div>
+        <label class="col-form-label col-2">/km</label>       	
+     </div>
+    <div class="form-group row">
+      <div class="col-8 offset-4">
+        <button type="submit" class="btn btn-primary btn-lg ">Submit</button>
+      </div>  
+    </div>		      
+    </form>
+    </div>
+</template>

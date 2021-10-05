@@ -1,0 +1,26 @@
+{
+  "name": "mmyapp",
+  "private": true,
+  "scripts": {
+    "start": "meteor run",
+    "test": "meteor test --once --driver-package meteortesting:mocha",
+    "test-app": "TEST_WATCH=1 meteor test --full-app --driver-package meteortesting:mocha",
+    "visualize": "meteor --production --extra-packages bundle-visualizer"
+  },
+  "dependencies": {
+    "@babel/runtime": "^7.10.4",
+    "@fortawesome/fontawesome-free": "^5.14.0",
+    "babel-runtime": "^6.26.0",
+    "bootstrap": "^4.5.2",
+    "core-js": "^3.6.5",
+    "jquery": ">=1.9.1 <3.0.0",
+    "meteor-node-stubs": "^1.0.1"
+  },
+  "meteor": {
+    "mainModule": {
+      "client": "client/main.js",
+      "server": "server/main.js"
+    },
+    "testModule": "tests/main.js"
+  }
+}

@@ -1,0 +1,468 @@
+body{
+  font-family: 'Comic Neue', cursive;
+}
+/*====Nav===*/
+
+.menu{
+  font-size:13px;
+  letter-spacing: 1px;
+  color:black;
+  
+}
+.demo{
+  margin-left: 20px;
+  border-radius: 4px;
+  
+}
+.icon{
+  color: black;
+}
+.homehead{
+  margin-left: 300px;
+}
+header{
+  height: 85vh;
+  background: linear-gradient(rgba(0,0,0,0.63),rgba(0,0,0,0.5)),
+  url(images/taxi.jpg)no-repeat center center/cover;
+}
+.banner{
+  position: absolute;
+  top:50%;
+  left : 50%;
+  transform:translate(-50%,-50%) ;
+  width: 80%;
+}
+
+.heading{
+  animation-name:slide;
+  animation-duration: 2s;
+}
+.main{
+  animation-name: slide;
+  animation-duration: 2s;
+  animation-delay: .5s;
+  animation-fill-mode: backwards;
+}
+@keyframes slide{
+ 0%{
+   transform: translateX(-1000px);  
+   opacity: 0;
+ } 
+ 100%{
+     transform:translateX(0);
+     opacity: 1;
+ }
+}
+
+.card-text{
+  margin-top: 40px;
+  font-size: 14px;
+
+}
+
+footer{
+  background: #000;
+  padding-top: 2%;
+  margin-top: 15px;
+  position: relative;
+}
+footer hr{
+  border-top: 2px solid white;
+}
+.text-center h3{
+  color: white; 
+}
+.my-3{
+   margin-left: 45px;
+}
+
+.my-4{
+   margin-left: 50px;
+   color: white;
+}
+footer span{
+   padding: 0.3em 0.7em;
+   color: white;
+   transition: all .5s ease;
+}
+footer p{
+   color:grey;
+   font-size: 15px;
+}
+footer h6{
+   color: white;
+}
+
+.success-popup  {
+   transition: .3s ease all;
+   font-family: 'Roboto', sans-serif;
+}
+
+/*===Login_page==*/
+.th-1{
+  color:black;
+}
+.validate1{
+  width: 250px;
+  margin-left: 50px;
+}
+.labeel{
+  margin-left: 50px;
+}
+
+/*==end of login_page==*/
+.searchmodalbody{
+  height: 400px;
+  overflow-y: scroll;
+  overflow-x: hidden;
+}
+/*====signup form===*/
+.login{
+  width: 200px;
+  height: 150px;
+  font-size: 12px;
+  vertical-align: middle;
+}
+.but1{
+  width: 100px;
+  height: 30px;
+ 
+}
+.searchinghome{
+  width: 600px;
+  font-size: 12px;
+  vertical-align: middle;
+  
+}
+.pas{
+  
+  box-shadow: 0px 0px 2px rgba(0, 0, 0, 0.5);
+}
+/*====End of signup form===*/
+
+/*==Driverandtaxi Page==*/
+.first{
+  background-color: #e3e3e3;
+  height: 100%;
+  width:300px;
+  position: fixed;
+  overflow-x: hidden;
+  margin-top: 55px;
+  z-index: 1;
+  font-size: 14px;
+}
+
+.third{
+  position: fixed;
+  overflow-y: scroll;
+  height: 100%;
+  width: 100%;
+ padding-left: 400px;
+
+}
+.btn-1{
+  text-align: center;
+  width: 49.5%;
+  height: 35px;
+  margin-top: 10px;
+  background-color: white;
+  float:left;
+  border: 1px solid #e3e3e3;
+}
+
+.btn2{
+  width: 80px;
+  float:right;
+  margin-top: 10px;
+  font-size: 14px;
+}
+.coll2{
+  margin-top: 120px;
+}
+.searchloc{
+  width: 200px;
+}
+.listingline{
+  margin-top: 20px;
+  border-top: 2px solid #999;
+  margin-left: 15px;
+  margin-right: 15px;
+}
+.col1{
+
+  border: 1px solid transparent;
+  height: 120px;
+  margin-top: 30px;
+  margin-bottom: 40px;
+
+}
+.searchbox{
+  margin-top: 30px;
+}
+
+.second{
+  margin-top: 70px;
+  width: 900px;
+  height: 300px;
+  position: relative;
+  box-shadow: 0px 0px 2px rgba(0, 0, 0, 0.5);
+  font-size: 13px;
+  padding-top: 5px;
+}
+.head{
+  margin-top: 20px;
+  margin-left: 20px;
+}
+.r1{
+  margin-top: 55px;
+}
+.r2{
+  margin-top: 10px;
+}
+.imagcar{
+  width:170px;
+   height:110;
+}
+.pass{
+  margin-top: 10px;
+  margin-left: 70px;
+  
+}
+.star{
+  float: right;
+  margin-top: 40px;
+  margin-right: 50px;
+}
+.fa-star{
+  color: gold;
+}
+.mystar .current-rating {
+  color: gold;
+}
+
+
+
+@media (max-width: 850.98px) { 
+  .validate1{
+    width: 200px;
+    margin-left: 10px;
+  }
+  .labeel{
+    margin-left: 10px;
+  }
+  .homehead{
+    margin-left: 10px;
+  }
+  .first{
+  width: 100%;
+  height: 300px;
+  overflow-y: hidden;  
+
+  }
+  .searchloc{
+    width: 400px;
+  }
+  .col1{
+      height: 50px;
+      margin-top: 20px;
+      margin-bottom: 20px;
+  }
+  .btn2{
+      margin-top: 20px;
+  }
+  .loc{
+      float: left;
+  }
+  .imagcar{
+      width:110px;
+       height:90;
+      
+  }
+  .searchbox{
+      margin-top: 30px;
+  }
+  .itype{
+      width:400px;
+  }
+  .second{
+      margin-left: 0px;
+      width:620px;
+      height: 250px;
+      margin-top: 20px;
+      font-size: 10px;
+  }
+  .r1{
+    margin-top: 30px;
+  }
+  .star{
+    float: right;
+    margin-top: 5px;
+    margin-right: 50px;
+  }
+  .third{
+      width: 800px;
+      height: 400px;
+      padding-right: 0px;
+      margin-top: 350px;
+      padding-left: 10px;
+  }
+ 
+}
+
+/*== END OF Driverandtaxi Page==*/
+/*====signup form===*/
+.b2 {
+	color: #999;
+	background: #f3f3f3;
+	
+}
+
+.form-control {
+	border-color: #eee;
+    min-height: 41px;
+    border-width: 2px;
+    box-shadow: none !important;
+    
+}
+.form-control:focus {
+	border-color: #FBE83B;
+}
+.form-control, .btn {        
+	border-radius: 3px;
+}
+
+.signupline{
+  text-align:left;
+  margin-left:400px;
+  margin-right: 400px;
+  border-top: 3px solid #FBE83B;
+}
+.signup-form {
+	width: 500px;
+	margin: 0 auto;
+  padding: 120px 0;
+ 
+}
+.signup-form h2 {
+	color: #333;
+	margin: 0 0 30px 0;
+	display: inline-block;
+	padding: 0 30px 10px 0;
+	border-bottom: 3px solid #FBE83B;
+}
+.signup-form form {
+	color: #999;
+	border-radius: 3px;
+	margin-bottom: 15px;
+	background: #fff;
+	box-shadow: 0px 0px 2px rgba(0, 0, 0, 0.3);
+	padding: 30px;
+}
+.signup-form .form-group row {
+	margin-bottom: 20px;
+}
+.signup-form label {
+	font-weight: normal;
+	font-size: 14px;
+	line-height: 2;
+}
+.signup-form input[type="checkbox"] {
+	position: relative;
+	top: 1px;
+}
+.signup-form .btn {        
+    font-size: 16px;
+    color: #000;
+	background: #FBE83B;
+	border: none;
+	margin-top: 20px;
+	min-width: 120px;
+}
+.signup-form .btn:hover, .signup-form .btn:focus {
+	background: #FBE83B;
+	outline: none !important;
+}
+.signup-form a {
+	color:black;
+	text-decoration: underline;
+}
+.signup-form a:hover {
+	text-decoration: none;
+}
+input[type="text"] {
+  font-size:12px;
+}
+input[type="number"] {
+  font-size:12px;
+}
+input[type="password"] {
+  font-size:12px;
+}
+.headingpart{
+  margin-top: 120px;
+}
+/*====End of signup form===*/
+/*==SETTINGS==*/
+.headingsetting{
+  
+  font-size: 14px;
+   color: black;
+    margin-left: 740px;
+}
+.headofpage{
+ font-size: 40px;
+ margin-top: 70px;
+} 
+#editinfo{
+  margin-top:90px;
+  }
+.btn-setting{
+  width: 95%;
+  margin-left: 8px;
+  height: 60px;
+  border: 1px solid #e3e3e3;
+  font-weight: 500;
+}
+.random{
+  margin-left: 300px;
+}
+.changepass{
+ padding-top: 200px;
+ margin-left: 100px;
+}
+.changepass1{
+  width:500px;
+  margin-left: 200px;
+  box-shadow: 0px 0px 2px rgba(0, 0, 0, 0.3);
+}
+/*==END OF SETTINGS==*/
+
+@media  (max-width: 767.98px) {
+  .signupline{
+    
+    margin-left:100px;
+    margin-right: 100px;
+   
+  }
+  .headingsetting{
+    margin-left: 10px;
+  }
+  .headofpage{
+    margin-top: 10px;
+  } 
+  
+  #editinfo{
+  margin-top: 15px;
+  }
+  .btn-setting{
+    width: 95%;
+    margin-left: 8px;
+    height: 40px;
+    border: 1px solid #e3e3e3;
+    font-weight: 400;
+  }
+  .random{
+    margin-left: 0px;
+    padding-top: 250px;
+  }
+ }
